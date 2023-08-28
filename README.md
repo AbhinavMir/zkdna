@@ -43,3 +43,6 @@ Genetic data holds immense potential for advancing medical research, personalize
 **11. Usability and Accessibility:**
    - The system should be user-friendly, considering that users might not be experts in cryptography or genetics.
    - Ensuring accessibility for individuals with various genetic backgrounds is important.
+
+### References
+https://www.iacr.org/archive/crypto2014/86160292/86160292.pdf
