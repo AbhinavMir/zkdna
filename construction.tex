@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Zero-Knowledge Proof Construction}
+
+Let $pk$ be the proving key, $vk$ be the verification key, and $g$ be a generator of the elliptic curve.
+
+\subsection{Genetic Traits}
+
+Let $T$ be the set of numeric genetic traits associated with the user.
+
+\subsection{Private Key and Genetic Data}
+
+The user has a private key $sk$ and genetic data $D$.
+
+\subsection{Proof Generation}
+
+To prove possession of genetic traits in $T$, the user constructs the following:
+
+\begin{itemize}
+    \item For each genetic trait $t \in T$, compute the commitment $C_t = g^{sk} \cdot t$.
+    \item Compute a random blinding factor $r$.
+    \item Construct the commitment to the blinded genetic data $C_D = g^{sk} \cdot D \cdot g^{r}$.
+    \item Construct the zero-knowledge proof $\pi$ such that $\pi$ proves that the user knows $sk$ and $r$ such that $C_D$ is a valid commitment to $D$ and each $C_t$ is a valid commitment to the genetic traits.
+\end{itemize}
+
+\subsection{Proof Verification}
+
+The verifier, possessing the verification key $vk$, verifies the proof as follows:
+
+\begin{itemize}
+    \item Verify that the commitments $C_D$ and $C_t$ are valid on the elliptic curve.
+    \item Verify that the zero-knowledge proof $\pi$ is valid.
+    \item If all verifications pass, the verifier accepts the proof and confirms that the user possesses the genetic traits in $T$.
+\end{itemize}
+
+\end{document}
